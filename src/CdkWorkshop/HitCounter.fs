@@ -1,6 +1,5 @@
 namespace CdkWorkshop
 
-open Amazon.CDK
 open Amazon.CDK.AWS.DynamoDB
 open Amazon.CDK.AWS.Lambda
 open Constructs
@@ -38,3 +37,4 @@ type HitCounter(scope: Construct, id: string, props: IHitCounterProps) as this =
         ()
 
     member _.Handler() = handler
+    member _.Table = table

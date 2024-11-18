@@ -4,6 +4,7 @@ open Amazon.CDK
 open Amazon.CDK.AWS.Lambda
 open Amazon.CDK.AWS.APIGateway
 open Constructs
+open Cdklabs.DynamoTableViewer
 
 type CdkWorkshopStack(scope: Construct, id: string, props: IStackProps) as this =
     inherit Stack(scope, id, props)
@@ -25,6 +26,10 @@ type CdkWorkshopStack(scope: Construct, id: string, props: IStackProps) as this 
         Handler = helloWithCounter.Handler()
     ))
 
+    let tv = TableViewer(this, "ViewHitCounter", TableViewerProps(
+        Title = "Hello Hits",
+        Table = helloWithCounter.Table
+    ))
 
     do
 
