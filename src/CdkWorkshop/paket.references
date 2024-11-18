@@ -1,3 +1,4 @@
 Amazon.CDK.Lib
 Constructs
 FSharp.Core
+Cdklabs.DynamoTableViewer

@@ -1,6 +1,7 @@
 source https://api.nuget.org/v3/index.json
 
 storage: none
-nuget Amazon.CDK.Lib 2.166.0
+nuget Amazon.CDK.Lib ~> 2.166
+nuget Cdklabs.DynamoTableViewer ~> 0.2
 nuget Constructs
 nuget FSharp.Core content: none

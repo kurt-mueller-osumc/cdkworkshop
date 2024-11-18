@@ -1,15 +1,15 @@
 STORAGE: NONE
 NUGET
   remote: https://api.nuget.org/v3/index.json
-    Amazon.CDK.Asset.AwsCliV1 (2.2.211) - restriction: >= netcoreapp3.1
-      Amazon.JSII.Runtime (>= 1.104 < 2.0) - restriction: >= netcoreapp3.1
+    Amazon.CDK.Asset.AwsCliV1 (2.2.212) - restriction: >= netcoreapp3.1
+      Amazon.JSII.Runtime (>= 1.105 < 2.0) - restriction: >= netcoreapp3.1
     Amazon.CDK.Asset.KubectlV20 (2.1.3) - restriction: >= netcoreapp3.1
       Amazon.JSII.Runtime (>= 1.103.1 < 2.0) - restriction: >= netcoreapp3.1
     Amazon.CDK.Asset.NodeProxyAgentV6 (2.1) - restriction: >= netcoreapp3.1
       Amazon.JSII.Runtime (>= 1.103.1 < 2.0) - restriction: >= netcoreapp3.1
     Amazon.CDK.CloudAssembly.Schema (38.0.1) - restriction: >= netcoreapp3.1
       Amazon.JSII.Runtime (>= 1.103.1 < 2.0) - restriction: >= netcoreapp3.1
-    Amazon.CDK.Lib (2.166)
+    Amazon.CDK.Lib (2.167.1)
       Amazon.CDK.Asset.AwsCliV1 (>= 2.2.208 < 3.0) - restriction: >= netcoreapp3.1
       Amazon.CDK.Asset.KubectlV20 (>= 2.1.3 < 3.0) - restriction: >= netcoreapp3.1
       Amazon.CDK.Asset.NodeProxyAgentV6 (>= 2.1 < 3.0) - restriction: >= netcoreapp3.1
@@ -21,6 +21,10 @@ NUGET
       Microsoft.Extensions.Logging (>= 8.0.1) - restriction: >= netcoreapp3.1
       Microsoft.Extensions.Logging.Console (>= 8.0.1) - restriction: >= netcoreapp3.1
       Newtonsoft.Json (>= 13.0.3) - restriction: >= netcoreapp3.1
+    Cdklabs.DynamoTableViewer (0.2.488)
+      Amazon.CDK.Lib (>= 2.60 < 3.0) - restriction: >= netcoreapp3.1
+      Amazon.JSII.Runtime (>= 1.91 < 2.0) - restriction: >= netcoreapp3.1
+      Constructs (>= 10.0.5 < 11.0) - restriction: >= netcoreapp3.1
     Constructs (10.4.2)
       Amazon.JSII.Runtime (>= 1.102 < 2.0) - restriction: >= netcoreapp3.1
     FSharp.Core (9.0.100) - content: none
