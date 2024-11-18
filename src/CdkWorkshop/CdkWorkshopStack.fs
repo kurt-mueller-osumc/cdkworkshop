@@ -12,4 +12,9 @@ type CdkWorkshopStack(scope: Construct, id: string, props: IStackProps) as this 
     let queue = Queue(this, "CdkWorkshopQueue", QueueProps(VisibilityTimeout = Duration.Seconds(300.)))
 
     let topic = Topic(this, "CdkWorkshopTopic")
-    do topic.AddSubscription(SqsSubscription(queue)) |> ignore
+
+    let subscription = SqsSubscription(queue)
+
+    do
+        // subscribe the queue to receive any messages published to the topic
+        topic.AddSubscription(subscription) |> ignore
