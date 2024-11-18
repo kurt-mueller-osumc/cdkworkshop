@@ -29,7 +29,11 @@ type HitCounter(scope: Construct, id: string, props: IHitCounterProps) as this =
     ))
 
     do
+        // grant the lambda role read/write permissions to our table
         table.GrantReadWriteData(handler) |> ignore
+
+        // grant the lambda role invoke permissions to the downstream function
+        props.Downstream.GrantInvoke(handler) |> ignore
 
         ()
 
