@@ -29,6 +29,8 @@ type HitCounter(scope: Construct, id: string, props: IHitCounterProps) as this =
     ))
 
     do
+        table.GrantReadWriteData(handler) |> ignore
+
         ()
 
     member _.Handler() = handler
