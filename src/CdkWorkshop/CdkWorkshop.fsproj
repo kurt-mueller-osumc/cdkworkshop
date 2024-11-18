@@ -8,6 +8,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="HitCounter.fs" />
+    <Compile Include="WorkshopPipelineStack.fs" />
     <Compile Include="CdkWorkshopStack.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

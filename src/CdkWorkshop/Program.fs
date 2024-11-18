@@ -5,7 +5,10 @@ open CdkWorkshop
 let main _ =
     let app = App(null)
 
-    CdkWorkshopStack(app, "CdkWorkshopStack", StackProps()) |> ignore
+    // CdkWorkshopStack(app, "CdkWorkshopStack", StackProps()) |> ignore
+
+    WorkshopPipelineStack(app, "WorkshopPipelineStack", StackProps()) |> ignore
 
     app.Synth() |> ignore
+
     0
