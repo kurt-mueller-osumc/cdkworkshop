@@ -14,16 +14,17 @@ type CdkWorkshopStack(scope: Construct, id: string, props: IStackProps) as this 
         Handler = "hello.handler"
     ))
 
-    let gateway = LambdaRestApi(this, "Endpoint", LambdaRestApiProps(
-        Handler = hello
-    ))
-
     let hitCounterProps =
         { new IHitCounterProps with
             member _.Downstream = hello
         }
 
     let helloWithCounter = HitCounter(this, "HelloHitCounter", hitCounterProps)
+
+    let gateway = LambdaRestApi(this, "Endpoint", LambdaRestApiProps(
+        Handler = helloWithCounter.Handler()
+    ))
+
 
     do
 
