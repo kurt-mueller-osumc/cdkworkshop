@@ -2,9 +2,7 @@ namespace CdkWorkshop
 
 open Amazon.CDK
 open Amazon.CDK.AWS.Lambda
-open Amazon.CDK.AWS.SNS
-open Amazon.CDK.AWS.SNS.Subscriptions
-open Amazon.CDK.AWS.SQS
+open Amazon.CDK.AWS.APIGateway
 open Constructs
 
 type CdkWorkshopStack(scope: Construct, id: string, props: IStackProps) as this =
@@ -16,8 +14,17 @@ type CdkWorkshopStack(scope: Construct, id: string, props: IStackProps) as this 
         Handler = "hello.handler"
     ))
 
+    let gateway = LambdaRestApi(this, "Endpoint", LambdaRestApiProps(
+        Handler = hello
+    ))
+
+    let hitCounterProps =
+        { new IHitCounterProps with
+            member _.Downstream = hello
+        }
+
+    let helloWithCounter = HitCounter(this, "HelloHitCounter", hitCounterProps)
+
     do
-        // subscribe the queue to receive any messages published to the topic
-        // topic.AddSubscription(subscription) |> ignore
 
         ()
