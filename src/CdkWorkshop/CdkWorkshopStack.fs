@@ -18,3 +18,5 @@ type CdkWorkshopStack(scope: Construct, id: string, props: IStackProps) as this 
     do
         // subscribe the queue to receive any messages published to the topic
         topic.AddSubscription(subscription) |> ignore
+
+        ()
