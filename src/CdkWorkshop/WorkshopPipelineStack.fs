@@ -18,7 +18,7 @@ type WorkshopPipelineStack(scope: Construct, id: string, props: StackProps) as t
             CodeBuildStepProps(
                 Input = source,
                 // Commands = [| "npm ci"; "npm run build"; "npx cdk synth" |]
-                Commands = [| "dotnet tool install --global Paket"; "npx cdk synth" |]
+                Commands = [| "dotnet tool install --global Paket"; "paket restore"; "npx cdk synth" |]
             )
         )
     ))
